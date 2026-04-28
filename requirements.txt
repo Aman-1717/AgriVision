@@ -1,0 +1,30 @@
+# FastAPI needs Pydantic v2. Pin a recent 2.x so manylinux wheels exist (avoids maturin/Rust
+# build on PaaS when Python 3.14 has no prebuilt pydantic-core wheel).
+pydantic>=2.12.0,<3
+# NumPy <2 — torch 2.0–2.2 wheels were built against NumPy 1.x and raise
+# "Numpy is not available" at runtime if NumPy 2.x is installed. Keep <2 until
+# torch is bumped to >=2.3.
+numpy>=1.26,<2
+torch>=2.0.0
+torchvision>=0.15.0
+fastapi>=0.100.0
+uvicorn[standard]>=0.23.0
+opencv-python>=4.8.0
+Pillow>=10.0.0
+python-multipart>=0.0.6
+google-generativeai>=0.3.0
+python-dotenv>=1.0.0
+# Clerk: JWT + REST via auth.py (PyJWT/httpx). Do not add clerk-sdk-python — it pins pydantic<2
+# and conflicts with FastAPI.
+httpx>=0.24.0
+certifi>=2024.0.0
+truststore>=0.9.0
+PyJWT[crypto]>=2.8.0
+sqlalchemy>=2.0.0
+aiosqlite>=0.19.0
+psycopg2-binary>=2.9.0
+requests>=2.31.0
+# tzdata — Windows ships no IANA timezone DB, so zoneinfo.ZoneInfo("Asia/Kolkata")
+# in market_api.py raises ZoneInfoNotFoundError without this package.
+tzdata>=2024.1
+

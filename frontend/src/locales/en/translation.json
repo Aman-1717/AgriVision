@@ -1,0 +1,516 @@
+{
+  "nav": {
+    "home": "Home",
+    "dashboard": "Dashboard",
+    "disease": "Disease",
+    "weather": "Weather",
+    "market": "Mandi market",
+    "fertilizer": "Fertilizer",
+    "cropRecommendation": "Crop picker",
+    "yield": "Yield estimate",
+    "calendar": "Crop calendar",
+    "irrigation": "Irrigation advisor",
+    "fields": "My fields",
+    "history": "Activity history",
+    "resources": "Resources",
+    "community": "Community",
+    "soil": "Soil scope",
+    "plants": "Plant profile",
+    "openMenu": "Open navigation menu"
+  },
+  "brand": "AgriVision",
+  "aboutLink": "About & disclaimer",
+  "auth": {
+    "signIn": "Sign in",
+    "signUp": "Sign up"
+  },
+  "language": {
+    "label": "Language",
+    "en": "English",
+    "hi": "Hindi"
+  },
+  "login": {
+    "back": "← Back to app",
+    "title": "Sign in to AgriVision",
+    "subtitle": "Community features and profile sync use Clerk."
+  },
+  "home": {
+    "hero": {
+      "kicker": "AgriVision",
+      "title": "One workspace for plant health, weather, and inputs",
+      "subtitle": "Diagnose leaves, read field-ready weather, and tune fertilizer—all with a calm interface built for quick checks between rows.",
+      "ctaDisease": "Analyze a leaf",
+      "ctaWeather": "Open weather lens",
+      "ctaFertilizer": "Fertilizer guide"
+    },
+    "benefits": {
+      "local": "Disease checks saved locally in your browser",
+      "weather": "Weather tuned to your field or search",
+      "guidance": "Outputs are guidance—verify with local experts"
+    },
+    "coreTools": "Core tools",
+    "coreToolsHint": "Jump in where your day needs clarity first.",
+    "open": "Open",
+    "tools": {
+      "disease": {
+        "title": "Disease detection",
+        "desc": "Upload a leaf photo for EfficientNet-based diagnosis with care-oriented suggestions."
+      },
+      "weather": {
+        "title": "Weather lens",
+        "desc": "Current conditions, agronomic signals, alerts, and a 3-day outlook with GDD context."
+      },
+      "fertilizer": {
+        "title": "Fertilizer guide",
+        "desc": "Combine soil tests, crop type, moisture, and live weather for tailored recommendations."
+      }
+    },
+    "how": {
+      "title": "How it fits together",
+      "subtitle": "Each tool stands alone; combine them when you want the fuller picture for a plot or season.",
+      "step1Title": "Capture context",
+      "step1Body": "Add a leaf image, allow location, or enter soil and crop details.",
+      "step2Title": "Get insights",
+      "step2Body": "Models and weather APIs return labels, cues, and text you can act on.",
+      "step3Title": "Decide in the field",
+      "step3Body": "Cross-check with extension, labels, and your own scouting before big calls."
+    },
+    "also": {
+      "title": "Also explore",
+      "community": {
+        "title": "Community",
+        "desc": "Forum, groups, and grower knowledge."
+      },
+      "soil": {
+        "title": "Soil scope",
+        "desc": "Texture cards and field considerations."
+      },
+      "plants": {
+        "title": "Plant profiles",
+        "desc": "Quick crop reference for water, light, and pH."
+      }
+    },
+    "disclaimer": {
+      "line1": "Heads up:",
+      "line2": "AgriVision is informational—always validate high-stakes decisions with qualified support."
+    },
+    "disclaimerCta": "About & disclaimer →",
+    "workspace": {
+      "title": "Today's workspace",
+      "latest": "Latest check",
+      "latestSub": "Tomato · 94% confidence",
+      "field": "Field weather",
+      "fieldSub": "22°C · irrigation cue",
+      "npk": "N–P–K note",
+      "npkSub": "Based on loam + maize"
+    }
+  },
+  "dashboard": {
+    "loading": "Loading dashboard…",
+    "title": "Farm dashboard",
+    "subtitle": "Disease check history, simple risk cues, and charts. Synced across your devices when signed in.",
+    "source": {
+      "synced": "Synced from your account",
+      "local": "Local browser history",
+      "loading": "Syncing…"
+    },
+    "monitoring": "Location context",
+    "locationSet": "Last weather search: {{lat}}, {{lon}} (session)",
+    "locationUnset": "No saved coordinates yet — open Weather to set your field location.",
+    "checks": "Stored checks",
+    "chartLabels": "Checks by condition",
+    "chartTime": "Checks per day",
+    "empty": "No disease checks saved yet.",
+    "goDisease": "Run a leaf check",
+    "footnote": "Risk levels are heuristic rules on your saved history, not field predictions. Always verify with scouting and experts.",
+    "risk": {
+      "title": "Watch level (heuristic)",
+      "level": {
+        "low": "Low — routine monitoring",
+        "moderate": "Moderate — review recent flags",
+        "elevated": "Elevated — consider follow-up scouting"
+      },
+      "flags": {
+        "repeatPattern": "Similar non-healthy labels appeared more than once in the last 7 days.",
+        "lowConfidence": "Some recent non-healthy results had low model confidence — rescan with a clearer leaf photo if unsure."
+      }
+    }
+  },
+  "resources": {
+    "title": "Resource management",
+    "subtitle": "Ideas to reduce water waste, schedule nutrients with weather, and trim input cost while protecting yield.",
+    "open": "Open",
+    "water": {
+      "title": "Smarter water use",
+      "body": "Pair irrigation with weather (rain ahead, ET cues) and soil moisture. Use the Weather lens for timing."
+    },
+    "fertilizer": {
+      "title": "Fertilizer scheduling",
+      "body": "Combine soil type, moisture, crop, and current temperature or humidity from the Fertilizer guide."
+    },
+    "cost": {
+      "title": "Input cost focus",
+      "body": "Track what the model flags on the dashboard and avoid repeat sprays or extra inputs without a soil or tissue check."
+    },
+    "schedule": {
+      "title": "Simple rotation to try",
+      "s1": "Monday: review weather + 3-day outlook before irrigating.",
+      "s2": "After rain: delay N top-dress until you can incorporate or as per local split schedule.",
+      "s3": "Monthly: export or screenshot dashboard history when talking to your extension agent."
+    },
+    "schemes": {
+      "title": "Government schemes & support (India)",
+      "subtitle": "Direct links to official portals. Eligibility, amounts, and timelines change—always verify the current rules on the source site below.",
+      "open": "Open official portal",
+      "disclaimer": "AgriVision is not affiliated with the Government of India. Information is for orientation only.",
+      "pmkisan": {
+        "name": "PM-KISAN",
+        "summary": "Income support of ₹6,000 per year (in three instalments) to eligible landholding farmer families. Manage registration, eKYC, and payment status on the official portal."
+      },
+      "kcc": {
+        "name": "Kisan Credit Card (KCC)",
+        "summary": "Short-term crop loans with simplified procedures via banks. RBI master direction explains coverage for crop production, allied activities, and post-harvest needs."
+      },
+      "soilhealth": {
+        "name": "Soil Health Card",
+        "summary": "Soil testing scheme issuing crop-wise nutrient recommendations. Use the portal to find sample collection centres and download cards for your khasra/plot."
+      },
+      "enam": {
+        "name": "eNAM (electronic National Agriculture Market)",
+        "summary": "Online trading platform integrating mandis (APMCs) so you can compare prices and reach more buyers. Register through your nearest integrated mandi."
+      },
+      "icarAwd": {
+        "name": "ICAR — Alternate Wetting & Drying (AWD) for rice",
+        "summary": "Water-saving irrigation practice for paddy validated by ICAR-IIRR: significant water savings without yield loss when scheduled correctly."
+      }
+    }
+  },
+  "market": {
+    "title": "Mandi & wholesale snapshot (India)",
+    "subtitle": "We map your point to a state and district, then show wholesale-style prices or reference bands. Cross-check the mandi board, APMC notice, and official portals before you trade.",
+    "indiaOnly": "This tool is designed only for points inside India.",
+    "setLocation": "Location",
+    "searchIntro": "Search for a place in India, or use session coordinates from the",
+    "searchIntroSuffix": " page (same as Weather).",
+    "searchPlaceholder": "e.g. Dadri, Gautam Buddha Nagar or Bengaluru",
+    "search": "Search",
+    "searching": "Searching…",
+    "searchShort": "Type at least 2 characters",
+    "searchFailed": "Search failed. Try a different spelling.",
+    "noSearchHits": "No results — try a district, town, or pin code name.",
+    "ogdFixTitle": "Live government data (data.gov.in)",
+    "locationHelp": "We read latitude and longitude from the Weather page (session) or your device. Open",
+    "weatherLink": "Weather",
+    "useSaved": "Use weather location",
+    "useGps": "Update with GPS",
+    "geoWait": "Locating…",
+    "labelSaved": "Weather session coordinates",
+    "labelGps": "Device GPS (saved to session)",
+    "activeSource": "Location source",
+    "noCoords": "Set a place: use Search above, or “Use weather location” / GPS.",
+    "toastNoSaved": "No saved weather location yet",
+    "toastNoSavedHint": "Open the Weather page once so we can store lat/lon in this browser session.",
+    "geoUnsupported": "Geolocation is not available in this browser.",
+    "geoFail": "Could not read GPS. Check permissions and try again.",
+    "loading": "Fetching mandi context…",
+    "error": "Could not load market data.",
+    "region": "Region",
+    "modeLive": "Live (data.gov.in)",
+    "modeIndicative": "Indicative bands",
+    "asOf": "Snapshot: {{when}} (IST context)",
+    "ogdHint": "Live data uses data.gov.in “Variety-wise Daily Market Prices” when DATA_GOV_IN_API_KEY and DATA_GOV_IN_MANDI_RESOURCE are set in the server .env. If you see no rows, add your keys from data.gov.in, then restart the API server.",
+    "col": {
+      "commodity": "Commodity",
+      "variety": "Variety / grade",
+      "min": "Min (₹)",
+      "modal": "Modal (₹)",
+      "max": "Max (₹)",
+      "arrival": "Arrival",
+      "market": "Mandi / ref."
+    },
+    "unitNote": "Prices are shown as ₹/Quintal when the source uses wholesale units. Modal is the most traded class in the published row; min/max are the reported band.",
+    "disclaimer": "This page does not provide buy/sell advice. Commodity law, taxes, and quality deductions vary. Use Agmarknet, e-NAM, and your local APMC for enforceable terms. OGD data depends on the dataset you configure; indicative mode uses static reference ranges for UX only."
+  },
+  "chat": {
+    "title": "Farm assistant (AI)",
+    "welcome": "Ask about crop care, water timing, or where to read official scheme rules. I will keep answers short and safety-conscious.",
+    "placeholder": "Type your question…",
+    "send": "Send",
+    "thinking": "Thinking…",
+    "error": "Could not reach the assistant. Check that the API is running and try again.",
+    "signInRequired": "Sign in to use the AI assistant. This protects the service for everyone.",
+    "tokenWait": "Session is still loading. Wait a second and try again, or refresh the page.",
+    "sessionNotVerified": "The server could not verify your session token. Ensure CLERK_SECRET_KEY is in the project root .env (same secret key as in the Clerk dashboard), restart the API, and try again. If it still fails, check the API terminal for Clerk errors.",
+    "rateLimited": "Too many messages. Please wait a bit before trying again.",
+    "openFab": "Open farm assistant",
+    "closePanel": "Close",
+    "voice": {
+      "micStart": "Speak your question",
+      "micStop": "Stop listening",
+      "listening": "Listening…",
+      "speak": "Read reply aloud",
+      "stopSpeak": "Stop reading",
+      "autoSpeak": "Auto-read replies",
+      "unsupported": "Voice is not supported in this browser. Try Chrome or Edge on desktop or Android.",
+      "micDenied": "Microphone access was blocked. Allow it in browser settings to use voice input.",
+      "noSpeech": "I did not catch that—try speaking again."
+    }
+  },
+  "crop": {
+    "title": "Crop picker",
+    "subtitle": "Pick the crops most likely to thrive on your field. Combines your soil, climate and the upcoming season.",
+    "clearSaved": "Clear saved inputs",
+    "tryAgain": "Try again",
+    "submit": "Suggest crops",
+    "submitting": "Looking up best fits…",
+    "placeholder": { "choose": "Choose…" },
+    "fields": {
+      "soilType": "Soil type",
+      "ph": "Soil pH",
+      "temperature": "Temperature (°C)",
+      "humidity": "Humidity (%)",
+      "rainfall": "Seasonal rainfall (mm)",
+      "nitrogen": "Nitrogen N (kg/ha)",
+      "phosphorous": "Phosphorous P (kg/ha)",
+      "potassium": "Potassium K (kg/ha)",
+      "season": "Season"
+    },
+    "hints": {
+      "ph": "Typical agricultural range 5.0–8.0",
+      "rainfall": "Total expected for the season"
+    },
+    "soil": {
+      "sandy": "Sandy",
+      "clay": "Clay",
+      "loamy": "Loamy",
+      "silty": "Silty",
+      "peaty": "Peaty",
+      "chalky": "Chalky"
+    },
+    "season": {
+      "kharif": "Kharif (Jun–Oct)",
+      "rabi": "Rabi (Nov–Apr)",
+      "zaid": "Zaid (Mar–Jun)"
+    },
+    "suitability": {
+      "high": "Strong fit",
+      "medium": "Workable",
+      "low": "Risky"
+    },
+    "result": {
+      "title": "Top picks",
+      "fitScore": "Fit score: {{score}}",
+      "disclaimer": "Suggestions are guidance based on standard ranges; verify with local extension officers and seed dealers before sowing."
+    },
+    "toast": { "ready": "Suggestions ready" },
+    "errors": {
+      "soil": "Pick a soil type.",
+      "season": "Pick a season.",
+      "numeric": "Enter a number for {{field}}.",
+      "phRange": "pH must be between 3 and 10.",
+      "requestFailed": "Could not reach the server. Try again in a moment.",
+      "empty": "The server returned no recommendation."
+    }
+  },
+  "yield": {
+    "title": "Yield estimate",
+    "subtitle": "Estimate per-hectare yield and total harvest from crop, soil, fertilizer applied, climate and irrigation.",
+    "clearSaved": "Clear saved inputs",
+    "tryAgain": "Try again",
+    "submit": "Estimate yield",
+    "submitting": "Calculating…",
+    "placeholder": { "choose": "Choose…", "loading": "Loading crops…" },
+    "fields": {
+      "crop": "Crop",
+      "area": "Area",
+      "areaUnit": "Area unit",
+      "soilType": "Soil type",
+      "irrigated": "Irrigation available",
+      "temperature": "Temperature (°C)",
+      "humidity": "Humidity (%)",
+      "rainfall": "Seasonal rainfall (mm)",
+      "nitrogen": "N applied (kg/ha)",
+      "phosphorous": "P applied (kg/ha)",
+      "potassium": "K applied (kg/ha)"
+    },
+    "hints": { "rainfall": "Total expected rainfall during the crop season" },
+    "soil": {
+      "sandy": "Sandy", "clay": "Clay", "loamy": "Loamy",
+      "silty": "Silty", "peaty": "Peaty", "chalky": "Chalky"
+    },
+    "units": {
+      "ha": "ha",
+      "acre": "acre",
+      "qtl": "qtl",
+      "qtlPerHa": "qtl/ha",
+      "tonnes": "tonnes"
+    },
+    "factors": {
+      "nutrient": "Nutrients",
+      "climate": "Climate",
+      "soil": "Soil match",
+      "irrigation": "Irrigation"
+    },
+    "result": {
+      "title": "Estimated harvest",
+      "perHectare": "Per hectare (central)",
+      "totalProduction": "Total expected",
+      "crop": "Crop",
+      "band": "Band {{lo}}–{{hi}} qtl/ha",
+      "baseline": "Regional baseline ~{{v}} qtl/ha",
+      "factors": "Adjustment factors (×)",
+      "disclaimer": "Estimates are guidance based on standard regional baselines and adjustment factors. Actual yield depends on variety, pest pressure, soil depth, sowing window, and other field-specific factors."
+    },
+    "toast": { "ready": "Estimate ready" },
+    "errors": {
+      "crop": "Choose a crop.",
+      "soil": "Choose a soil type.",
+      "areaPositive": "Area must be greater than zero.",
+      "numeric": "Enter a number for {{field}}.",
+      "requestFailed": "Could not reach the server. Try again in a moment.",
+      "empty": "The server returned no estimate."
+    }
+  },
+  "fields": {
+    "title": "My fields",
+    "subtitle": "Keep a journal of your plots — name, area, soil, current crop, sowing date, GPS pin and notes.",
+    "addField": "Add field",
+    "edit": "Edit",
+    "delete": "Delete",
+    "openCalendar": "Calendar",
+    "openIrrigation": "Water",
+    "loading": "Loading your fields…",
+    "empty": "No fields saved yet. Add your first plot to start tracking.",
+    "signInRequired": "Sign in to save and track your fields.",
+    "deleteConfirm": "Delete \"{{name}}\"? This cannot be undone.",
+    "fields": {
+      "name": "Field name",
+      "area": "Area",
+      "areaUnit": "Area unit",
+      "soilType": "Soil type",
+      "crop": "Current / last crop",
+      "sowingDate": "Sowing date",
+      "latitude": "Latitude",
+      "longitude": "Longitude",
+      "location": "GPS",
+      "notes": "Notes"
+    },
+    "soil": {
+      "sandy": "Sandy", "clay": "Clay", "loamy": "Loamy",
+      "silty": "Silty", "peaty": "Peaty", "chalky": "Chalky"
+    },
+    "units": { "ha": "ha", "acre": "acre" },
+    "placeholder": {
+      "choose": "Choose…",
+      "crop": "e.g. Wheat, Tomato",
+      "lat": "e.g. 28.6139",
+      "lon": "e.g. 77.2090",
+      "notes": "Anything you want to remember about this field"
+    },
+    "modal": {
+      "createTitle": "Add new field",
+      "editTitle": "Edit field",
+      "create": "Create",
+      "save": "Save",
+      "saving": "Saving…",
+      "cancel": "Cancel",
+      "close": "Close"
+    },
+    "toast": {
+      "created": "Field added",
+      "updated": "Field updated",
+      "deleted": "Field deleted"
+    },
+    "errors": {
+      "name": "Give the field a name.",
+      "area": "Enter a valid area (zero or greater).",
+      "loadFailed": "Could not load your fields.",
+      "saveFailed": "Could not save the field.",
+      "deleteFailed": "Could not delete the field."
+    }
+  },
+  "history": {
+    "title": "Activity history",
+    "subtitle": "Every disease scan, crop pick, yield estimate, fertilizer recommendation, crop calendar, irrigation advice and chat exchange you run while signed in is saved here.",
+    "signInRequired": "Sign in to see your saved activity.",
+    "loading": "Loading your history\u2026",
+    "loadingDetail": "Loading details\u2026",
+    "empty": "Nothing saved yet. Run a disease scan, crop pick, yield estimate, fertilizer recommendation, crop calendar, irrigation schedule or farm chat to start your history.",
+    "input": "Input",
+    "output": "Output",
+    "delete": "Delete",
+    "deleting": "Deleting\u2026",
+    "clear": "Clear all",
+    "clearing": "Clearing\u2026",
+    "clearConfirm": "Delete all {{count}} entries from this view? This cannot be undone.",
+    "filters": {
+      "all": "All",
+      "disease": "Disease scan",
+      "crop_rec": "Crop pick",
+      "yield": "Yield",
+      "fertilizer": "Fertilizer",
+      "calendar": "Calendar",
+      "irrigation": "Irrigation",
+      "chat": "Farm chat"
+    },
+    "toast": {
+      "deleted": "Entry deleted",
+      "cleared": "{{count}} entries cleared"
+    },
+    "errors": {
+      "loadFailed": "Could not load history.",
+      "deleteFailed": "Could not delete the entry."
+    }
+  },
+  "calendar": {
+    "title": "Crop calendar",
+    "subtitle": "Pick a crop and your sowing date \u2014 we lay out every growth stage with its target dates and the activities to do in each.",
+    "fields": {
+      "crop": "Crop",
+      "sowingDate": "Sowing date"
+    },
+    "build": "Build calendar",
+    "building": "Building\u2026",
+    "season": "Season window",
+    "daysToHarvest": "Days to harvest",
+    "daysSinceSowing": "Day {{count}} since sowing",
+    "current": "Current",
+    "errors": {
+      "loadCropsFailed": "Could not load crop list.",
+      "buildFailed": "Could not build the calendar."
+    }
+  },
+  "irrigation": {
+    "title": "Smart irrigation advisor",
+    "subtitle": "Crop + stage + soil + today's weather \u2192 today's water depth, volume to apply for your area, and how many days until the next irrigation.",
+    "compute": "Compute schedule",
+    "computing": "Computing\u2026",
+    "stageAuto": "Auto from days",
+    "fields": {
+      "crop": "Crop",
+      "stage": "Stage (optional)",
+      "daysSinceSowing": "Days since sowing",
+      "soilType": "Soil",
+      "method": "Irrigation method",
+      "area": "Area",
+      "tempMaxC": "Temp max (\u00b0C)",
+      "tempMinC": "Temp min (\u00b0C)",
+      "humidity": "Humidity (%)",
+      "rainfallMm": "Rainfall today (mm)"
+    },
+    "crops": { "rice": "Rice", "wheat": "Wheat", "maize": "Maize", "cotton": "Cotton", "tomato": "Tomato" },
+    "methods": { "drip": "Drip", "sprinkler": "Sprinkler", "furrow": "Furrow", "flood": "Flood", "basin": "Basin" },
+    "units": { "ha": "ha", "acre": "acre" },
+    "stats": {
+      "todayDepth": "Apply today (depth)",
+      "netMm": "Net",
+      "todayVolume": "Volume today",
+      "interval": "Next irrigation in",
+      "efficiency": "App. eff.",
+      "cycleVolume": "Per cycle"
+    },
+    "errors": {
+      "adviceFailed": "Could not compute irrigation advice."
+    }
+  }
+}

@@ -1,0 +1,199 @@
+@import "tailwindcss";
+
+/* Design system: Linear / modern — “deep space + ambient indigo” (see design-system spec) */
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+
+  /* Legacy brand (disease, charts) — keep for gradual migration */
+  --color-brand-50: oklch(0.97 0.02 160);
+  --color-brand-100: oklch(0.93 0.04 160);
+  --color-brand-200: oklch(0.85 0.08 160);
+  --color-brand-500: oklch(0.55 0.15 160);
+  --color-brand-600: oklch(0.48 0.14 160);
+  --color-brand-700: oklch(0.42 0.12 160);
+
+  /* —— Core canvas & ink —— */
+  --color-void-0: #020203;
+  --color-void-1: #050506;
+  --color-void-2: #0a0a0c;
+  --color-ink: #ededef;
+  --color-ink-muted: #8a8f98;
+  --color-ink-faint: rgb(255 255 255 / 0.55);
+
+  /* —— Surfaces (translucent glass) —— */
+  --color-surface-ds: rgb(255 255 255 / 0.05);
+  --color-surface-ds-hover: rgb(255 255 255 / 0.08);
+  --color-input-void: #0f0f12;
+
+  /* —— Accent (indigo CTA) —— */
+  --color-indigo-cta: #5e6ad2;
+  --color-indigo-cta-bright: #6872d9;
+  --color-indigo-glow: rgb(94 106 210 / 0.3);
+
+  /* —— Hairline borders —— */
+  --color-ds-border: rgb(255 255 255 / 0.06);
+  --color-ds-border-hover: rgb(255 255 255 / 0.1);
+  --color-ds-border-accent: rgb(94 106 210 / 0.3);
+
+  --radius-lg: 0.75rem;
+
+  /* Motion tokens (expo-out family) */
+  --ease-av: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@layer base {
+  html {
+    @apply antialiased;
+  }
+  body {
+    @apply min-h-dvh font-sans text-ink;
+    background-color: var(--color-void-1);
+  }
+}
+
+@layer components {
+  .av-card {
+    @apply relative overflow-hidden rounded-2xl border border-ds-border;
+    background: linear-gradient(
+      to bottom,
+      rgb(255 255 255 / 0.08) 0%,
+      rgb(255 255 255 / 0.02) 100%
+    );
+    box-shadow:
+      0 0 0 1px rgb(255 255 255 / 0.06),
+      0 2px 20px rgb(0 0 0 / 0.4),
+      0 0 40px rgb(0 0 0 / 0.2);
+  }
+
+  .av-card-hover {
+    @apply transition-[box-shadow,transform,border-color] duration-200;
+    transition-timing-function: var(--ease-av, cubic-bezier(0.16, 1, 0.3, 1));
+  }
+  .av-card-hover:hover {
+    @apply border-ds-border-hover;
+    box-shadow:
+      0 0 0 1px rgb(255 255 255 / 0.1),
+      0 8px 40px rgb(0 0 0 / 0.5),
+      0 0 80px rgb(94 106 210 / 0.1);
+  }
+
+  .ds-btn-primary {
+    @apply inline-flex items-center justify-center rounded-lg font-medium text-white;
+    @apply active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-cta/50 focus-visible:ring-offset-2 focus-visible:ring-offset-void-1;
+    background: var(--color-indigo-cta);
+    box-shadow:
+      0 0 0 1px rgb(94 106 210 / 0.5),
+      0 4px 12px rgb(94 106 210 / 0.3),
+      inset 0 1px 0 0 rgb(255 255 255 / 0.2);
+    transition: background 200ms var(--ease-av, cubic-bezier(0.16, 1, 0.3, 1)),
+      box-shadow 200ms var(--ease-av, cubic-bezier(0.16, 1, 0.3, 1)), transform 200ms
+        var(--ease-av, cubic-bezier(0.16, 1, 0.3, 1));
+  }
+  .ds-btn-primary:hover {
+    background: var(--color-indigo-cta-bright);
+    box-shadow:
+      0 0 0 1px rgb(94 106 210 / 0.55),
+      0 6px 16px rgb(94 106 210 / 0.4),
+      inset 0 1px 0 0 rgb(255 255 255 / 0.2);
+  }
+
+  .ds-btn-secondary {
+    @apply inline-flex items-center justify-center rounded-lg border border-ds-border font-medium text-ink;
+    @apply active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-cta/50 focus-visible:ring-offset-2 focus-visible:ring-offset-void-1;
+    @apply bg-surface-ds hover:bg-surface-ds-hover;
+    box-shadow: inset 0 1px 0 0 rgb(255 255 255 / 0.1);
+    transition: background 200ms var(--ease-av, cubic-bezier(0.16, 1, 0.3, 1)), border-color 200ms
+      var(--ease-av, cubic-bezier(0.16, 1, 0.3, 1));
+  }
+  .ds-btn-secondary:hover {
+    @apply border-ds-border-hover;
+  }
+
+  .ds-input {
+    @apply w-full min-w-0 rounded-lg border border-white/10 bg-input-void px-3 py-2 text-sm text-ink placeholder:text-ink-faint;
+    @apply outline-none focus:border-indigo-cta focus:ring-2 focus:ring-indigo-cta/35;
+  }
+
+  .ds-nav-item {
+    @apply flex items-center gap-3 rounded-lg px-3 py-2 text-sm font-medium text-ink-muted;
+    @apply transition-[color,background-color,transform] duration-200;
+    transition-timing-function: var(--ease-av, cubic-bezier(0.16, 1, 0.3, 1));
+  }
+  .ds-nav-item:hover {
+    @apply -translate-y-px text-ink bg-surface-ds;
+  }
+  .ds-nav-item-active {
+    @apply -translate-y-px text-white;
+    @apply border border-ds-border-accent/40 bg-indigo-cta/20 shadow-[0_0_0_1px_rgba(94,106,210,0.25),inset_0_1px_0_0_rgba(255,255,255,0.08)];
+  }
+
+  /* Marketing / feature sections — use instead of ad-hoc emerald/sky/white */
+  .ds-hero {
+    @apply relative overflow-hidden rounded-3xl border border-ds-border bg-void-2/50;
+    box-shadow:
+      0 0 0 1px rgb(255 255 255 / 0.06),
+      0 20px 50px rgb(0 0 0 / 0.45);
+  }
+  .ds-kicker {
+    @apply font-mono text-xs font-medium uppercase tracking-widest text-ink-faint;
+  }
+  .ds-link-accent {
+    @apply font-medium text-indigo-cta-bright decoration-indigo-cta/50 underline-offset-2 hover:underline;
+  }
+  .ds-spinner {
+    @apply h-10 w-10 animate-spin rounded-full border-2 border-ds-border border-t-indigo-cta;
+  }
+  .ds-badge-neutral {
+    @apply inline-flex items-center rounded-full border border-ds-border bg-surface-ds px-2.5 py-0.5 text-xs font-medium text-ink-muted;
+  }
+  .ds-badge-warn {
+    @apply inline-flex items-center rounded-full border border-amber-500/25 bg-amber-950/40 px-2.5 py-0.5 text-xs font-medium text-amber-100;
+  }
+}
+
+@layer utilities {
+  .text-gradient-hero {
+    @apply bg-clip-text text-transparent;
+    background-image: linear-gradient(to bottom, #fff, rgb(255 255 255 / 0.72));
+  }
+  .text-gradient-accent {
+    @apply bg-clip-text text-transparent;
+    background-image: linear-gradient(90deg, #5e6ad2, #a5b4fc, #5e6ad2);
+    background-size: 200% 100%;
+  }
+}
+
+/* Ambient blob motion */
+@keyframes av-float-1 {
+  0%,
+  100% {
+    transform: translateY(0) translateX(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-20px) translateX(6px) rotate(1deg);
+  }
+}
+@keyframes av-float-2 {
+  0%,
+  100% {
+    transform: translateY(0) translateX(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(14px) translateX(-10px) rotate(-0.5deg);
+  }
+}
+
+@layer base {
+  .av-float-slow {
+    animation: av-float-1 9s ease-in-out infinite;
+  }
+  .av-float-slower {
+    animation: av-float-2 10.5s ease-in-out infinite;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .av-float-slow,
+    .av-float-slower {
+      animation: none;
+    }
+  }
+}
