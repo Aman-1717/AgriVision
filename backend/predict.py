@@ -24,14 +24,14 @@ _MODEL_PATH = _REPO_ROOT / "model" / "plant_model.pth"
 _CLASS_NAMES_PATH = _REPO_ROOT / "model" / "class_names.json"
 
 _folder_labels: list[str] = []
-if _TRAIN_DIR.is_dir():
-    _folder_labels = sorted(os.listdir(_TRAIN_DIR))
-elif _CLASS_NAMES_PATH.is_file():
+if _CLASS_NAMES_PATH.is_file():
     try:
         with open(_CLASS_NAMES_PATH, "r", encoding="utf-8") as f:
             _folder_labels = list(json.load(f))
     except Exception as e:
         print(f"Warning: failed to read {_CLASS_NAMES_PATH}: {e}")
+if not _folder_labels and _TRAIN_DIR.is_dir():
+    _folder_labels = sorted(os.listdir(_TRAIN_DIR))
 
 _ckpt = torch.load(_MODEL_PATH, map_location="cpu")
 _w = _ckpt.get("classifier.1.weight")
