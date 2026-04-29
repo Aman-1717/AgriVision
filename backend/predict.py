@@ -1,3 +1,4 @@
+import json
 import torch
 from torchvision import models, transforms
 from PIL import Image
@@ -20,8 +21,18 @@ except ImportError:
 _REPO_ROOT = Path(__file__).resolve().parent.parent
 _TRAIN_DIR = _REPO_ROOT / "dataset" / "train"
 _MODEL_PATH = _REPO_ROOT / "model" / "plant_model.pth"
+_CLASS_NAMES_PATH = _REPO_ROOT / "model" / "class_names.json"
 
-_folder_labels = sorted(os.listdir(_TRAIN_DIR)) if _TRAIN_DIR.is_dir() else []
+_folder_labels: list[str] = []
+if _TRAIN_DIR.is_dir():
+    _folder_labels = sorted(os.listdir(_TRAIN_DIR))
+elif _CLASS_NAMES_PATH.is_file():
+    try:
+        with open(_CLASS_NAMES_PATH, "r", encoding="utf-8") as f:
+            _folder_labels = list(json.load(f))
+    except Exception as e:
+        print(f"Warning: failed to read {_CLASS_NAMES_PATH}: {e}")
+
 _ckpt = torch.load(_MODEL_PATH, map_location="cpu")
 _w = _ckpt.get("classifier.1.weight")
 if _w is None:
